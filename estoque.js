@@ -25,7 +25,7 @@ export function transacao(origem, destino, quantidade, fruta){
             }
         }
 
-        if(monte === undefined){
+        if(!monte){
             monte = {'tipo': fruta, 'qtd': 0};
             pessoa.push(monte);
         }
