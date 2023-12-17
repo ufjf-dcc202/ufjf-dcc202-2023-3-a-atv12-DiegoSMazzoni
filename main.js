@@ -7,8 +7,8 @@ document.entrada.addEventListener('submit', leFormulario);
 
 //imprime
 
-const olJoao = document.querySelector("#olJoao");
-const olMaria = document.querySelector("#olMaria");
+const olJoao = document.querySelector("#joao");
+const olMaria = document.querySelector("#maria");
 
 atualizaTela();
 
