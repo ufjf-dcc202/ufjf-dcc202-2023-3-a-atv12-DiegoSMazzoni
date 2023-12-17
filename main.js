@@ -1,6 +1,6 @@
 //main.js
 
-import { getEstoque, transacao} from "./estoque.js";
+import { getEstoque, transacaoNoEstoque} from "./estoque.js";
 
 document.entrada.addEventListener('submit', leFormulario);
 //leFormulario();
@@ -21,7 +21,7 @@ function leFormulario(event) {
 
     console.log(`Solicitado: ${origem} doa ${quantidade} ${fruta} para ${destino}`);
     //document.entrada.submit();
-    transacao (origem, destino, quantidade, fruta);
+    transacaoNoEstoque (origem, destino, quantidade, fruta);
     atualizaTela();
 }
 
