@@ -37,7 +37,7 @@ function preencheListaPessoa(pessoa, lista){
     for(let i = 0; i < pessoa.length; i++){
         const monte = pessoa[i];
         const eLi = document.createElement('li');
-        eLi.innerText = `${monte.tipo}: ${monte.qtd}`;
+        eLi.innerText = `${monte.tipo}: ${monte.quantidade}`;
         lista.append(eLi);
     }
 }

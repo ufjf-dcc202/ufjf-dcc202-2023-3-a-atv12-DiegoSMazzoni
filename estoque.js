@@ -1,14 +1,10 @@
 //estoque.js
 let estoque = { 
  'joao': [   
-    {'tipo': "maca", 'qtd': 1},
-    {'tipo': "pera", 'qtd': 1},
+    {'tipo': "maca", 'quantidade': 1},
 ],
  'maria': [ 
-    {'tipo': "maca", 'qtd': 2},
-    {'tipo': "banana", 'qtd': 4},
-    {'tipo': "pera", 'qtd': 4},
-
+    {'tipo': "maca", 'quantidade': 2},
  ]
 };
 
@@ -57,7 +53,7 @@ function dePessoaParaPomar(origem, quantidade, fruta){
         if(!monte){
             return;
         }
-        monte.qtd -= Math.min(quantidade, monte.qtd); 
+        monte.quantidade -= Math.min(quantidade, monte.quantidade); 
 
 }
 
@@ -71,10 +67,10 @@ function dePomarParaPessoa(destino, quantidade, fruta){
             }
         }
         if(!monte){
-            monte = {'tipo': fruta, 'qtd': 0};
+            monte = {'tipo': fruta, 'quantidade': 0};
             pessoa.push(monte);
         }
-        monte.qtd += quantidade;
+        monte.quantidade += quantidade;
         return;
 }
 
@@ -90,7 +86,7 @@ function dePessoaParaJoao(origem, quantidade, fruta){
         if(!monte){
             return;
         }
-        monte.qtd -= Math.min(quantidade, monte.qtd); 
+        monte.quantidade -= Math.min(quantidade, monte.quantidade); 
 
 }
 
@@ -104,10 +100,10 @@ function deJoaoParaPessoa(destino, quantidade, fruta){
             }
         }
         if(!monte){
-            monte = {'tipo': fruta, 'qtd': 0};
+            monte = {'tipo': fruta, 'quantidade': 0};
             pessoa.push(monte);
         }
-        monte.qtd += quantidade;
+        monte.quantidade += quantidade;
         return;
 }
 
@@ -123,7 +119,7 @@ function dePessoaParaMaria(origem, quantidade, fruta){
         if(!monte){
             return;
         }
-        monte.qtd -= Math.min(quantidade, monte.qtd); 
+        monte.quantidade -= Math.min(quantidade, monte.quantidade); 
 
 }
 
@@ -137,10 +133,10 @@ function deMariaParaPessoa(destino, quantidade, fruta){
             }
         }
         if(!monte){
-            monte = {'tipo': fruta, 'qtd': 0};
+            monte = {'tipo': fruta, 'quantidade': 0};
             pessoa.push(monte);
         }
-        monte.qtd += quantidade;
+        monte.quantidade += quantidade;
         return;
 }
 
