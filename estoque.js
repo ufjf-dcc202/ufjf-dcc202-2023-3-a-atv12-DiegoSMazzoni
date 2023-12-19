@@ -72,4 +72,8 @@ export function transacaoNoEstoque(origem, destino, tipo ,quantidade){
     return
 }
 
+export function limpaEstoque(){
+    estoque = {}
+}
+
 // export {getEstoque}
