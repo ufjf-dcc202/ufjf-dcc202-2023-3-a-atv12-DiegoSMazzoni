@@ -140,4 +140,8 @@ function deMariaParaPessoa(destino, quantidade, fruta){
         return;
 }
 
+export function limpaEstoque(){
+    estoque = {}
+}
+
 // export {getEstoque}
