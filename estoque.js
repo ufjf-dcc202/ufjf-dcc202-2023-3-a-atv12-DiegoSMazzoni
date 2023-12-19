@@ -13,10 +13,20 @@ export function getEstoque(){
 }
 
 export function transacaoNoEstoque(origem, destino, quantidade, fruta){
-    if(origem === destino) { return; }
+    if(origem === destino) { 
+        return; 
+    }
     if(quantidade <= 0){
         return;
     }
+    if(origem !== "pomar" && !estoque[origem]){
+        estoque[origem] = []
+    }  
+  
+    if(destino !== "pomar" && !estoque[destino]){
+        estoque[destino] = []
+    }  
+
     if(origem === 'pomar'){
         dePomarParaPessoa(destino, quantidade, fruta);
     }
@@ -41,38 +51,6 @@ export function transacaoNoEstoque(origem, destino, quantidade, fruta){
     
 }
 
-function dePessoaParaPomar(origem, quantidade, fruta){
-    const pessoa = estoque[origem];
-            let monte;
-            for(let i = 0; i < pessoa.length; i++){
-                if(pessoa[i].tipo === fruta){
-                    monte = pessoa[i];
-                    break;
-                }
-            }    
-        if(!monte){
-            return;
-        }
-        monte.quantidade -= Math.min(quantidade, monte.quantidade); 
-
-}
-
-function dePomarParaPessoa(destino, quantidade, fruta){
-    const pessoa = estoque[destino];
-        let monte;
-        for(let i = 0; i < pessoa.length; i++){
-            if(pessoa[i].tipo === fruta){
-                monte = pessoa[i];
-                break;
-            }
-        }
-        if(!monte){
-            monte = {'tipo': fruta, 'quantidade': 0};
-            pessoa.push(monte);
-        }
-        monte.quantidade += quantidade;
-        return;
-}
 
 function dePessoaParaJoao(origem, quantidade, fruta){
     const pessoa = estoque[origem];
